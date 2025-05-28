@@ -8,7 +8,7 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f5f5f5;
+      background: #f5f5f5  url('https://www.transparenttextures.com/patterns/cubes.png');
       color: #333;
     }
     header {
@@ -22,6 +22,7 @@
       margin: auto;
       padding: 2rem;
       background: #fff;
+      background-repeat: repeat;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h1{
@@ -36,7 +37,26 @@
     ul {
       padding-left: 1.2rem;
     }
+    li:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+      header {
+        padding: 1rem;
+      }
+    }
   </style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init();
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -44,11 +64,11 @@
     <p>Go | Node.js | Docker | PostgreSQL</p>
   </header>
   <div class="container">
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>Обо мне</h2>
       <p>Я разработчик с опытом в Go и Node.js, специализируюсь на создании надёжных backend-систем. Интересуюсь безопасностью, криптографией, распределёнными системами, автоматизацией и нейросетями.</p>
     </div>
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>Hardskills</h2>
       <ul>
         <li>Go: параллелизм, асинхронность, работа с context, профилирование</li>
@@ -62,7 +82,7 @@
         <li>Высшее техническое образование по направлению инфокоммуникационных технологий и систем связи</li>
       </ul>
     </div>
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>Softskills</h2>
       <ul>
         <li>Самостоятельная декомпозиция бизнес-задач</li>
@@ -72,7 +92,7 @@
         <li>Английский язык на уровне B1 (не подтвержден)</li>
       </ul>
     </div>
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>Проекты на предыдущих местах работы</h2>
       <ul>
         <li>Автоматизация рутинных задач аналитиков и менеджеров</li>
@@ -84,11 +104,11 @@
       При необходимости продемонстрировать код запрошу к собеседованию разрешение на демонстрацию листинга в той части, которая не нарушает NDA
     </div>
 
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>Контакты</h2>
       <p>Email: <a href="mailto:max.bakalets@gmail.com">max.bakalets@gmail.com</a></p>
       <div style="text-align: center">
-        <img src="https://i.ibb.co/7xjXjHSs/2025-05-23-09-29-08.png" alt="">
+        <img src="https://i.ibb.co/7xjXjHSs/2025-05-23-09-29-08.png" alt="QR-код" style="max-width: 200px; width: 100%; height: auto;">
       </div>
     </div>
   </div>
