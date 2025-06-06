@@ -3,43 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Резюме — Максим</title>
+  <title>Резюме. Максим Б.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5  url('https://www.transparenttextures.com/patterns/cubes.png');
-      color: #333;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        background: #f5f5f5  url('https://www.transparenttextures.com/patterns/cubes.png');
+        color: #333;
     }
     header {
-      background: #222;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
+        background: #222;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
     }
     .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      background: #fff;
-      background-repeat: repeat;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        max-width: 800px;
+        margin: auto;
+        padding: 2rem;
+        background: #fff;
+        background-repeat: repeat;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h1{
-      color: #dedede;
+        color: #dedede;
     }
     h2 {
-      color: #444;
+        color: #444;
     }
     .section {
-      margin-bottom: 2rem;
+        margin-bottom: 2rem;
     }
     ul {
-      padding-left: 1.2rem;
+        padding-left: 1.2rem;
     }
-    li:hover {
-      transform: scale(1.02);
-      transition: transform 0.2s ease;
+    li {
+        padding-bottom: 4px;
+        margin-bottom: 6px;
+    }
+    /* Тёмная тема */
+    body.dark {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+    body.dark .container {
+      background: #2c2c2c;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    body.dark header {
+      background: #111;
+      color: #fff;
+    }
+    body.dark a {
+      color: #4aa;
+    }
+    body.dark h2 {
+      color: #ddd;
+    }
+
+    .contacts-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: space-around;
+    }
+    .contacts-row img {
+      border-radius: 4px;
+    }
+    .contacts-row > a {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+    }
+    .contacts-row > a img {
+      display: block;
+      margin: 0 auto;
     }
     @media (max-width: 600px) {
       .container {
@@ -48,20 +89,24 @@
       header {
         padding: 1rem;
       }
+      .contacts-row {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      AOS.init();
-    });
-  </script>
 </head>
 <body>
   <header>
-    <h1>Максим — Разработчик ПО</h1>
-    <p>Go | Node.js | Docker | PostgreSQL | Git | Linux | REST API</p>
+    <h1>Максим Б. Резюме.</h1>
+    <p>Go | Node.js | Docker | PostgreSQL | Git | Linux | REST API | gRPC</p>
+    <button id="theme-toggle">🌙 / ☀️</button>
+    <script>
+    const btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+    });
+    </script>
   </header>
   <div class="container">
     <div class="section" data-aos="fade-up">
@@ -101,21 +146,19 @@
         <li>Telegram-бот с аналитикой активности интеграций трафика</li>
         <li>Верстка писем и автоматизация email-рассылки</li>
       </ul>
-      При необходимости продемонстрировать код запрошу к собеседованию разрешение на демонстрацию листинга в той части, которая не нарушает NDA
     </div>
 
     <div class="section" data-aos="fade-up">
       <h2>Контакты</h2>
-      <p>
-        <strong>📧 Email:</strong>
-            <a href="mailto:max.bakalets@gmail.com?subject=У%20вас%20прекрасное%20резюме%2C%20готовы%20взять%20вас%20хоть%20завтра!&body=Здравствуйте%2C%20Максим!%20Ваше%20резюме%20произвело%20впечатление.%20Свяжитесь%20с%20нами%20удобным%20способом%20—%20мы%20уже%20готовим%20ваше%20рабочее%20место%20🙂"
-                style="text-decoration: underline; color: #444;">
-                 max.bakalets@gmail.com
-            </a>
-        </p>
-      <div style="text-align: center">
+      <div class="contacts-row">
+        <a href="https://github.com/Arelost39" target="_blank" rel="noopener">
+          🐙 GitHub
+        </a>
         <a href="https://t.me/bakenberg" target="_blank" rel="noopener">
-          <img src="https://i.ibb.co/7xjXjHSs/2025-05-23-09-29-08.png" alt="QR-код" style="max-width: 200px; width: 100%; height: auto;">
+          <img src="https://i.ibb.co/7xjXjHSs/2025-05-23-09-29-08.png" alt="Telegram QR" style="width: 100px; height: 110px; vertical-align: middle;">
+        </a>
+        <a href="mailto:max.bakalets@gmail.com?subject=У%20вас%20прекрасное%20резюме%2C%20готовы%20взять%20вас%20хоть%20завтра!&body=Здравствуйте%2C%20Максим!%20Ваше%20резюме%20произвело%20впечатление.%20Свяжитесь%20с%20нами%20удобным%20способом%20—%20мы%20уже%20готовим%20ваше%20рабочее%20место%20🙂">
+          📧 max.bakalets@gmail.com
         </a>
       </div>
     </div>
