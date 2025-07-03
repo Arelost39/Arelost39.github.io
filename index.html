@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Максим Бакалeц — Backend Developer (Go / Node.js)</title>
+  <title>Максим Бакалец — Backend Developer (Go / Node.js)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
     :root {
       --bg: #f9f9f9;
       --bg-card: #ffffff;
@@ -20,6 +22,7 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--fg);
+      line-height: 1.45;
     }
 
     .wrapper {
@@ -34,7 +37,7 @@
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 24px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
+      box-shadow: 0 2px 4px rgba(0,0,0,.04);
     }
 
     header .header-inner {
@@ -48,6 +51,7 @@
       height: 160px;
       object-fit: cover;
       border-radius: 8px;
+      flex-shrink: 0;
     }
 
     h1 {
@@ -74,13 +78,12 @@
     }
 
     ul {
-      margin: 8px 0 0 16px;
+      margin: 8px 0 0 18px;
       padding: 0;
     }
 
     li {
       margin-bottom: 6px;
-      line-height: 1.4;
     }
 
     .contacts {
@@ -91,7 +94,7 @@
     }
 
     .contacts a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       text-decoration: none;
@@ -100,10 +103,6 @@
 
     .contacts a:hover {
       color: var(--accent);
-    }
-
-    small {
-      color: #666;
     }
 
     /* Dark mode */
@@ -121,15 +120,39 @@
       border: none;
       background: var(--accent);
       color: #fff;
-      padding: 8px 10px;
+      padding: 10px;
       border-radius: 50%;
       cursor: pointer;
       font-size: 1rem;
     }
 
+    /* --------- Responsive ---------- */
+    @media (max-width: 640px) {
+      .wrapper { padding: 16px; }
+
+      header .header-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      header img {
+        width: 100px;
+        height: 130px;
+      }
+
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: .85rem; }
+      section h2 { font-size: 1.15rem; }
+      ul { margin-left: 16px; }
+      .contacts { justify-content: center; }
+      .theme-toggle { bottom: 16px; right: 16px; }
+    }
+
     @media print {
       body { background: #fff; }
       .card { box-shadow: none; border: none; }
+      .theme-toggle { display: none; }
     }
   </style>
 </head>
@@ -140,7 +163,7 @@
       <div class="header-inner">
         <img src="https://i.ibb.co/23r0zB83/photo-2025-07-03-09-18-17.jpg" alt="Фото Максим Б.">
         <div>
-          <h1>Максим Бакалets</h1>
+          <h1>Максим Бакалец</h1>
           <div class="subtitle">Backend Developer (Go / Node.js)</div>
           <div class="tagline">Разработчик высоконагруженных микросервисов, интересуюсь распределёнными системами, безопасностью и AI-автоматизацией.</div>
           <div class="contacts">
@@ -167,7 +190,7 @@
         <li><strong>Тестирование:</strong> unit, integration, mocks (Testify, GoMock)</li>
         <li><strong>Инструменты:</strong> Git, GitLab CI/CD</li>
         <li><strong>Soft-skills:</strong> декомпозиция задач, коммуникация со стейкхолдерами, подготовка и проведение лекций</li>
-        <li><strong>Языки:</strong>  English B1 - читаю документацию, поддерживаю диалог (без сертификата)</li>
+        <li><strong>Языки:</strong> English B1 — читаю документацию, поддерживаю диалог (без сертификата)</li>
       </ul>
     </section>
 
@@ -177,9 +200,9 @@
         <li><strong>Система блокировки фрод-трафика (Go + PostgreSQL)</strong>: гибкая конфигурация, мониторинг</li>
         <li><strong>Программатик-интеграция по oRTB</strong>: подключение внешних партнёров, оптимизация дохода</li>
         <li><strong>Telegram-бот аналитики</strong>: автоматизация отчётности, push-уведомления</li>
-        <li><strong>Автоматическая персонализация email-рассылки (LLM)</strong>: генерация HTML-писем, постинг через SMTP (mailgun и gmail api)</li>
+        <li><strong>Автоматическая персонализация email-рассылки (LLM)</strong>: генерация HTML-писем, постинг через SMTP (Mailgun и Gmail API)</li>
         <li><strong>Платформа автоматизации внутренних процессов</strong>: уменьшение рутинных задач аналитиков, разработка инструментов автоматизации</li>
-        <li><strong>VPN сервера</strong>: система VPN серверов в различных локациях для выполнения задач команды</li>
+        <li><strong>VPN-сервера</strong>: система серверов в разных локациях для задач команды</li>
       </ul>
     </section>
 
